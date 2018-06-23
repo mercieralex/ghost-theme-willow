@@ -11,16 +11,17 @@
 // Body, Html
 body, html {
   height: 100%;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 // Body
 body {
   color: $c-black;
-  font-size: 14px;
+  @include ms-respond(font-size,0);
   min-width: 320px;
   line-height: 1.5;
   background: $c-background;
-  font-family: 'Merriweather', serif;
+  font-family: 'Georgia', "Hiragino Sans","ヒラギノ角ゴシック", "メイリオ", Meiryo, serif;
 }
 
 // Anchors
@@ -31,22 +32,20 @@ a {
   text-decoration: none;
 
   &:hover {
-    color: $c-grayDark;
+    color: $c-vividRed;
   }
 }
 
 // Headings
 h1 {
-  margin: 0;
-  font-size: 1.25em;
+  @include ms-respond(font-size,3);
+  margin-top: 10px;
 }
 
 h2 {
-  margin: 0;
-  font-size: 1.1em;
+  @include ms-respond(font-size,2);
 }
 
 h3 {
-  margin: 0;
-  font-size: 1em;
+  font-size: ms(1);
 }

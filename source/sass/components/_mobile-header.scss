@@ -7,7 +7,7 @@
   @extend .clear;
   margin-bottom: 30px;
   padding-bottom: 25px;
-  border-bottom: 1px solid $c-gray;
+  border-bottom: 1px solid $c-chestnutBrown;
 
   // Not visible for desktop
   @include breakpoint(desktop) {
@@ -24,6 +24,7 @@
 
 .c-mobile-header__link {
   font-weight: bold;
+  font-family: "YuMincho +36p Kana","游明朝体+36ポかな";
 }
 
 .c-mobile-header__logo {
@@ -32,6 +33,5 @@
 
 .c-mobile-header__logo__image {
   width: 40px;
-  height: 40px;
   @include border-radius(20px);
 }

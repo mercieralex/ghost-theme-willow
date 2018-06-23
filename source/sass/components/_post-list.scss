@@ -12,19 +12,34 @@
 .c-post-list__item {
   margin-bottom: 35px;
   padding-bottom: 20px;
-  border-bottom: 1px solid $c-gray;
+  border-bottom: 1px solid $c-chestnutBrown;
+  background: $c-white;
+  @include border-radius(4px);
 
   @media (min-width: 1200px) {
-    @include post3Col();
+    @include post1Col();
   }
 
   @media (max-width: 1199px) and (min-width: 880px) {
-    @include post2Col();
+    @include post1Col();
   }
 }
 
 // Image and image link
 .c-post-list__image {
+  margin: 0;
+  border-radius: 4px 4px 0 0;
+  height: 310px;
+  overflow: hidden;
+}
+
+@media (max-width: 549px) {
+    .c-post-list__image {
+      height: initial;
+    }
+}
+
+.c-post-list__image__link {
   display: block;
   margin-bottom: 15px;
 
@@ -35,23 +50,65 @@
 
 .c-post-list__image__img {
   width: 100%;
+  height: auto;
   display: block;
+}
+
+// Excerpt and footer
+.c-post-list__excerpt, .c-post-list__footer {
+  padding: 0 40px 40px;
+}
+
+@media (max-width: 549px) {
+    .c-post-list__excerpt, .c-post-list__footer {
+      padding: 0 20px 20px;
+    }
+}
+
+.c-post-list__footer {
+  padding-top: 0;
 }
 
 // Title
 .c-post-list__title {
-  font-size: 1.1em;
   line-height: 1.4;
   margin-bottom: 10px;
+  font-family: "YuMincho +36p Kana","游明朝体+36ポかな";
+  padding: 40px 40px 0 40px;
 }
+
+@media (max-width: 549px) {
+    .c-post-list__title {
+      padding: 20px 20px 0 20px;
+      margin: 0;
+    }
+}
+
+// Read more
+/*
+.c-post-list__read-more {
+  //font-style: italic;
+  margin-left: 0.5rem;
+}
+*/
 
 // Meta info
 .c-post-list__meta {
-  font-size: 0.9em;
-  font-style: italic;
-  color: $c-grayDark;
+  @include ms-respond(font-size,-1);
+  font-family: "YuMincho +36p Kana","游明朝体+36ポかな";
+  color: $c-vividRed;
+
+  &:before {
+    content: '';
+    display: table;
+    width: 100%;
+    border-top: 1px solid $c-chestnutBrown;
+    padding-top: 40px;
+  }
 }
 
 .c-post-list__meta__tags {
   text-transform: lowercase;
+  float: right;
+  font-family: "YuMincho +36p Kana","游明朝体+36ポかな";
 }

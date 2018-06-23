@@ -7,13 +7,11 @@
   min-height: 100vh;
   max-width: $maxPageWidth;
 
-  background: $c-white;
-  border-left: 1px solid $c-gray;
-  border-right: 1px solid $c-gray;
+  background: $c-background;
 
   // Less padding for mobile devices
   @include breakpoint(mobile) {
-    padding: 20px;
+    padding: 10px;
   }
 
   // More padding + margin on desktop
