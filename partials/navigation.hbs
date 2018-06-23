@@ -1,7 +1,12 @@
-<div class="c-sidebar-navigation">
-    {{#foreach navigation}}
-        <a class="c-sidebar-navigation__item" href="{{url absolute="true"}}" title="{{label}}">
-            {{label}}
-        </a>
-    {{/foreach}}
-</div>
+<nav class="c-sidebar-navigation">
+    <ul class="c-sidebar-navigation-list">
+        <h2 class="c-sidebar-navigation-list__title">Menu</h2>
+        {{#foreach navigation}}
+            <li class="c-sidebar-navigation-list__item{{#if current}} nav-current{{/if}}">
+                <a class="c-sidebar-navigation-list__item-{{slug}}" href="{{url absolute="true"}}">
+                    {{label}}
+                </a>
+            </li>
+        {{/foreach}}
+    </ul>
+</nav>

@@ -1,11 +1,13 @@
 <div class="c-post-view-meta">
-    {{date format="MMMM DD, YYYY"}}
+    <time class="dt-published" datetime="{{date format="YYYY-MM-DDThh:mmZ"}}">
+        <a class="u-url" href="{{url}}">{{date format="YYYY年MM月DD日"}}</a>
+    </time>
 
     {{#if tags}}
         in
         <span class="c-post-view-meta__tags">
             {{#foreach tags}}
-                <a href="{{url}}" title="{{name}}">#{{name}}</a>
+                <a class="p-category" href="{{url}}">#{{name}}</a>
             {{/foreach}}
         </span>
     {{/if}}

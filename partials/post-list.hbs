@@ -1,26 +1,37 @@
-<div class="c-post-list">
+<div class="c-post-list h-feed">
     {{#foreach posts}}
-        <article class="c-post-list__item {{post_class}}">
-            <a class="c-post-list__image" href="{{url}}" title="{{title}}">
-                <img class="c-post-list__image__img" src="{{img_url feature_image}}" alt="{{title}}"/>
-            </a>
+        <article class="c-post-list__item {{post_class}} h-entry">
+            {{#if feature_image}}
+                <figure class="c-post-list__image">
+                    <!-- <a class="c-post-list__image__link" href="{{url}}" title="{{title}}"> -->
+                        <img class="c-post-list__image__img" src="{{feature_image}}" alt="{{title}}" width="" height="" />
+                    <!-- </a> -->
+                </figure>
+            {{/if}}
 
-            <h2 class="c-post-list__title">
-                <a href="{{url}}" title="{{title}}">{{title}}</a>
+            <h2 class="c-post-list__title p-name">
+                <a href="{{url}}">{{title}}</a>
             </h2>
-
-            <div class="c-post-list__meta">
-                {{date format="MMMM DD, YYYY"}}
-
-                {{#if tags}}
-                    in
-                    <span class="c-post-list__meta__tags">
-                        {{#foreach tags}}
-                            <a href="{{url}}" title="{{name}}">#{{name}}</a>
-                        {{/foreach}}
-                    </span>
-                {{/if}}
+            <div class="c-post-list__excerpt">
+                <p class="p-summary">{{excerpt characters="115"}}<a class="c-post-list__read-more u-url" href="{{url}}">&hellip;</a></p>
             </div>
+
+            <footer class="c-post-list__footer">
+                <div class="c-post-list__meta">
+                    <time class="dt-published" datetime="{{date format="YYYY-MM-DDThh:mmZ"}}">
+                        {{date format="YYYY年MM月DD日"}}
+                    </time>
+
+                    {{#if tags}}
+                        <span class="c-post-list__meta__tags">
+                          in
+                            {{#foreach tags}}
+                                <a class="p-category" href="{{url}}">#{{name}}</a>
+                            {{/foreach}}
+                        </span>
+                    {{/if}}
+                </div>
+            </footer>
         </article>
     {{/foreach}}
 </div>

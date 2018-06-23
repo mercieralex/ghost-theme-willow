@@ -1,40 +1,75 @@
 <div id="site-sidebar" class="c-site-sidebar">
-    {{! Sidebar header with blog cover and logo images }}
-    <div class="c-sidebar-header" style="background-image: url({{@blog.cover_image}})">
-        <a class="c-sidebar-header__link" href="{{@blog.url}}" title="{{@blog.title}}">
-            <img class="c-sidebar-header__image" src="{{@blog.logo}}" alt="{{@blog.title}}">
-        </a>
-    </div>
+    <div class="h-card">
+        {{! Sidebar header with blog cover and logo images }}
+        <div class="c-sidebar-header" {{#if @blog.cover_image}} style="background-image: url({{@blog.cover_image}})"{{/if}}>
+            <div class="c-sidebar-header__frame" href="{{@blog.url}}" title="{{@blog.title}}">
+                <img class="c-sidebar-header__image u-photo" src="{{@blog.logo}}" alt="{{@blog.title}}" width="100" height="100" />
+            </div>
+        </div>
 
-    {{! Sidebar blog title }}
-    {{#is "home"}}<h1 class="c-sidebar-blog-title">{{else}}<h2 class="c-sidebar-blog-title">{{/is}}
-        <a class="c-sidebar-blog-title__link" href="{{@blog.url}}" title="{{@blog.title}}">
-            {{@blog.title}}
-        </a>
-    {{#is "home"}}</h1>{{else}}</h2>{{/is}}
+        {{! Sidebar blog title }}
+        {{#is "home"}}
+        <h1 class="c-sidebar-blog-title">
+            <a class="c-sidebar-blog-title__link p-name u-url" href="{{@blog.url}}" title="トップページへ戻る">
+        {{else}}
+        <h2 class="c-sidebar-blog-title">
+            <a class="c-sidebar-blog-title__link u-url p-name p-author" href="{{@blog.url}}" rel="author" title="トップページへ戻る">
+        {{/is}}
+                {{@blog.title}}
+            </a>
+        {{#is "home"}}</h1>{{else}}</h2>{{/is}}
 
-    {{! Sidebar blog description }}
-    <h2 class="c-sidebar-blog-description">
-        {{@blog.description}}
-    </h2>
+        {{! Sidebar blog description }}
+        <h2 class="c-sidebar-blog-description p-note">
+            {{@blog.description}}
+        </h2>
 
-    {{! Sidebar contact links }}
-    <div class="c-sidebar-contact-links">
-        <a class="c-sidebar-contact-links__item" href="#" target="_blank">
-            github
-        </a>
+        {{! Sidebar contact links }}
+        <div class="c-sidebar-contact-links">
+            <a class="c-sidebar-contact-links__item" href="https://github.com/mercieralex" rel="me">
+                github
+            </a>
 
-        <a class="c-sidebar-contact-links__item" href="#" target="_blank">
-            twitter
-        </a>
+            <a class="c-sidebar-contact-links__item" href="https://mamot.fr/@alexmercier" rel="me">
+                mastodon
+            </a>
 
-        <a class="c-sidebar-contact-links__item" href="#" target="_blank">
-            linkedin
-        </a>
+            {{#if @blog.twitter}}<a class="c-sidebar-contact-links__item" href="{{twitter_url @blog.twitter}}" rel="me">
+                twitter
+            </a>{{/if}}
 
-        <a class="c-sidebar-contact-links__item" href="#">
-            email
-        </a>
+            <a class="c-sidebar-contact-links__item" href="https://www.instagram.com/ale_mercier/" rel="me">
+                instagram
+            </a>
+
+            <a class="c-sidebar-contact-links__item" href="https://www.linkedin.com/in/alexmercier/" rel="me">
+                linkedin
+            </a>
+
+            <a class="c-sidebar-contact-links__item" href="https://www.wantedly.com/users/45786612" rel="me">
+                wantedly
+            </a>
+
+            <a class="c-sidebar-contact-links__item" href="https://newspicks.com/user/2327986" rel="me">
+                newspicks
+            </a>
+
+            <a class="c-sidebar-contact-links__item" href="https://www.quora.com/profile/%E3%83%A1%E3%83%AB%E3%82%B7%E3%82%A8-%E3%82%A2%E3%83%AC%E3%83%83%E3%82%AF%E3%82%B9-Alexandre-Mercier" rel="me">
+                quora
+            </a>
+
+            <a class="c-sidebar-contact-links__item" href="https://medium.com/@AlexMercier" rel="me">
+                medium
+            </a>
+
+            <a class="c-sidebar-contact-links__item" href="{{@blog.url}}/rss/" rel="me">
+                rss
+            </a>
+
+            <s><!-- <a class="c-sidebar-contact-links__item u-email" rel="me" href="mailto:#"> -->
+                email
+            <!-- </a> --></s>
+        </div>
     </div>
 
     {{! Sidebar navigation - Ghost's menu }}
@@ -42,12 +77,18 @@
 
     {{! Sidebar promotion / additional links }}
     <div class="c-sidebar-promotion-links">
-        <a class="c-sidebar-promotion-links__item" href="#" target="_blank">
-            &bull; Link
+        <h2 class="c-sidebar-promotion-links__title">Projects</h2>
+        <a class="c-sidebar-promotion-links__item" href="https://xn--https-u63dqd1e1cw548d366d.jp/">
+            &bull; HTTPSは必要ですか？
         </a>
 
-        <a class="c-sidebar-promotion-links__item" href="#" target="_blank">
+        <!--<a class="c-sidebar-promotion-links__item" href="#">
             &bull; Link
-        </a>
+        </a>-->
     </div>
+
+    {{! Sidebar small footer }}
+    <footer class="c-sidebar-footer">
+        <div class="c-sidebar-footer__copyright"><a href="{{@blog.url}}">{{@blog.title}}</a> &copy; <!--2017 —--> {{date format="YYYY"}}</div>
+    </footer>
 </div>
