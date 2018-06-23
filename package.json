@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/mercieralex/ghost-theme-willow.git"
+    "url": "git://github.com/mercieralex/yanagi.git"
   },
   "devDependencies": {
     "grunt": "^1.0.3",
