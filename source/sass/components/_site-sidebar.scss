@@ -14,6 +14,7 @@
   // Visible by default on desktop
   @include breakpoint(desktop) {
     left: 0;
+    padding-left: 30px;
   }
 
   // Off canvas by default on mobile
@@ -39,24 +40,24 @@
 // Logo and link
 .c-sidebar-header__link,
 .c-sidebar-header__image {
-  width: 80px;
-  height: 80px;
+  width: 130px;
+  height: 130px;
   display: block;
 }
 
 // Logo
 .c-sidebar-header__image {
-  @include border-radius(40px);
+  @include border-radius(70px);
   border: 2px solid $c-white;
 }
 
 // Link {
-.c-sidebar-header__link {
+.c-sidebar-header__frame {
   left: 50%;
-  bottom: -40px;
+  bottom: -50px;
   z-index: 1;
   position: absolute;
-  margin-left: -40px;
+  margin-left: -65px;
 }
 
 /*
@@ -66,8 +67,8 @@
 */
 .c-sidebar-blog-description {
   padding: 0 20px;
-  font-size: 0.9em;
-  color: $c-grayDark;
+  @include ms-respond(font-size,-1);
+  color: $c-chestnutBrown;
   margin-bottom: 20px;
   font-weight: normal;
 }
@@ -79,7 +80,7 @@
 */
 .c-sidebar-blog-title {
   padding: 0 15px;
-  font-size: 1.25em;
+  @include ms-respond(font-size,0);
   margin-bottom: 20px;
 }
 
@@ -89,10 +90,10 @@
 |-------------------------------------------------------------------------------
 */
 .c-sidebar-contact-links {
-  font-size: 0.9em;
+  @include ms-respond(font-size,-1);
   margin-bottom: 20px;
   padding: 0 15px 20px;
-  border-bottom: 1px solid $c-gray;
+  border-bottom: 1px solid $c-chestnutBrown;
 }
 
 .c-sidebar-contact-links__item {
@@ -105,15 +106,30 @@
 |-------------------------------------------------------------------------------
 */
 .c-sidebar-navigation {
-  font-size: 0.9em;
+  @include ms-respond(font-size,-1);
   margin-bottom: 20px;
   padding: 0 15px 20px;
-  border-bottom: 1px solid $c-gray;
+  border-bottom: 1px solid $c-chestnutBrown;
 }
 
-.c-sidebar-navigation__item {
+.c-sidebar-navigation-list {
+  list-style: none;
+  text-align: left;
+  padding-left: 15px;
+}
+
+.c-sidebar-navigation-list__title {
+    padding: 0 20px;
+    @include ms-respond(font-size,0);
+    color: $c-chestnutBrown;
+    margin-bottom: 20px;
+    font-weight: normal;
+    margin-top: 0;
+    text-align: center;
+}
+
+.c-sidebar-navigation-list__item {
   padding: 5px;
-  font-weight: bold;
   display: inline-block;
 }
 
@@ -123,13 +139,39 @@
 |-------------------------------------------------------------------------------
 */
 .c-sidebar-promotion-links {
-  font-size: 0.9em;
+  @include ms-respond(font-size,-1);
   margin-bottom: 20px;
   padding-bottom: 20px;
-  border-bottom: 1px solid $c-gray;
+  border-bottom: 1px solid $c-chestnutBrown;
+}
+
+// Not very DRY. See .c-sidebar-navigation-list__title
+.c-sidebar-promotion-links__title {
+    padding: 0 20px;
+    @include ms-respond(font-size,0);
+    color: $c-chestnutBrown;
+    margin-bottom: 20px;
+    font-weight: normal;
+    margin-top: 0;
 }
 
 .c-sidebar-promotion-links__item {
+  padding: 5px 15px;
+  display: block;
+}
+
+/*
+|-------------------------------------------------------------------------------
+| Sidebar footer & copyright
+|-------------------------------------------------------------------------------
+*/
+.c-sidebar-footer {
+  @include ms-respond(font-size,-1);
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+
+.c-sidebar-footer__copyright {
   padding: 5px 15px;
   display: block;
 }
