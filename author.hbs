@@ -1,41 +1,68 @@
 {{!< default}}
 {{#author}}
     <div class="c-author-page">
-        {{#if profile_image}}
-            <div class="c-author-page__image">
-                <img class="c-author-page__image__src" src="{{img_url profile_image}}" alt="{{name}}'s Picture"/>
-            </div>
-        {{/if}}
+        <div class="c-page-title">
+            <h1 class="c-author-page__title">ようこそ、わが家へ</h1>
+            <p>（池井戸潤ほどうまく書けませんが、、、）</p>
 
-        <h1 class="c-author-page__title">
-            {{name}}
-        </h1>
+            {{#if bio}}
+                <h2 class="c-author-page__bio">{{bio}}</h2>
+            {{/if}}
+        </div>
 
-        {{#if bio}}
-            <h3 class="c-author-page__bio">
-                {{bio}}
-            </h3>
-        {{/if}}
+        <div class="c-author-page__bio">
+            <p>
+                僕の拙いブログを訪ねてくださりありがとうございます。<br>
+                僕の名前は {{name}}（名・姓）です。日本語でアレクサンドル・メルシエと読みますが、普段アレックスと呼ばれています。
+            </p>
 
-        <div class="c-author-page__meta">
-            {{#if location}}
-                <span class="c-author-page__meta__location">{{location}}</span>
+            {{#if profile_image}}
+                <div class="c-author-page__image">
+                    <img class="c-author-page__image__src" src="{{profile_image}}" alt="{{name}}の画像" width="" height="" />
+                </div>
             {{/if}}
 
-            {{#if location}}
-                {{#if website}}
-                    -
+            <p>
+                フランス生まれ育ちの20代</s>前半（もうすぐ後半）</s>後半。<br>
+                フランス、ローレヌ地域の小さな町に生まれて、ずっと大学までロレーヌに住んでいました。但し、高校生時代、一年間東京に留学しました。<br>
+            </p>
+
+            <p>
+                ロレーヌ大学商学部卒業後、東京のベンチャーに入社。現在はウェブマーケティングを担当しています。（※ご参考までですが、当ブログの投稿はあくまで個人の見解です。）
+            </p>
+
+            <p>
+                趣味はスーツの着こなし、ウィスキー、葉巻と家計簿。<br>
+                外歩いているときに目についたものを読み上げることが癖です。僕は特に気づきませんが、フランスでも、日本でも言われたことがあるので、事実みたいですね。<br>
+                あと、僕の冗談に「寒い」と言われたことがあります。しかし、フランスで言われたことないので、おそらくツボの問題です。まあブログを読めば分かると思います。
+            </p>
+
+            <h2>ブログについて</h2>
+            <p>当ブログは僕が個人に運営しています。ブログを作ろうと考えた理由は主に二つです。</p>
+
+            <ul>
+                <li>
+                    一つ、自分のオンライン存在の「基地」を作りたかったです。インターネットを使って21年間が経ちました。この間で、様々なサイトに登録したり、コメントしたり、コミュニティーに参加したりして、自分の情報の管理が大変になりました。ネット上で僕に関する情報を一つの場所（当ブログ）で管理しようと思ったとき、<a href="https://indieweb.org/">IndieWeb Movement</a>に出逢えました。IndieWeb活動は自分のデータ管理の他に、利点がいくつかあります。別途詳しく説明しますね。
+                </li>
+                <li>
+                    二つ、僕が読んだり、学んだり、聞いたりした物事について考えて綴っています。議論を通じて自分の視野を広めることが好きですので、是非意見交換しましょう！（現在コメントを追加することができません）
+                </li>
+            </ul>
+
+            <p>また、日本語で書く練習と、Web技術を色々試していじったりしたいと思います。（急にアクセスできなくなったらすまん）</p>
+
+            <div class="c-author-page__meta">
+                {{#if location}}
+                    <span class="c-author-page__meta__location">当ブログは{{location}}からお届けします。</span>
                 {{/if}}
-            {{/if}}
+            </div>
+            <hr>
 
-            {{#if website}}
-                <span class="c-author-page__meta__website">
-                    <a href="{{website}}" target="_blank">{{website}}</a>
-                </span>
-            {{/if}}
+            <p>下記一緒に読むと良いかも。</p>
+            <ul>
+                <li><a href="{{@blog.url}}/manifest/">マニフェスト</a></li>
+                <li><a href="{{@blog.url}}/privacy-policy/">プライバシーポリシー</a></li>
+            </ul>
         </div>
     </div>
 {{/author}}
-
-{{> "post-list"}}
-{{pagination}}
