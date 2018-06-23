@@ -1,45 +1,51 @@
 <div class="c-post-view-prev-next">
         {{#next_post}}
-            <article class="c-post-view-prev-next__item {{post_class}}">
+            <article class="c-post-view-prev-next__item {{post_class}} h-entry">
                 <a class="c-post-view-prev-next__image" href="{{url}}" title="{{title}}">
-                    <img class="c-post-view-prev-next__image__img" src="{{img_url feature_image}}" alt="{{title}}"/>
+                    {{#if feature_image}}
+                        <img class="c-post-view-prev-next__image__img" src="{{feature_image}}" alt="{{title}}"width="" height="" />
+                    {{/if}}
                     <span class="c-post-view-prev-next__image__label c-post-view-prev-next__image__label--next">
-                        Next Post
+                        次の投稿
                     </span>
                 </a>
 
-                <h3 class="c-post-view-prev-next__title">
-                    <a href="{{url}}" title="{{title}}">{{title}}</a>
-                </h3>
+                <h2 class="c-post-view-prev-next__title p-name">
+                    <a href="{{url}}">{{title}}</a>
+                </h2>
             </article>
         {{else}}
-            <article class="c-post-view-prev-next__item">
+            <article class="c-post-view-prev-next__item h-entry">
                 <div class="c-post-view-prev-next__image c-post-view-prev-next__image--placeholder">
                     <span class="c-post-view-prev-next__image__label c-post-view-prev-next__image__label--next">
-                        No Newer Posts
+                        新しい投稿はありません<br>
+                        (m´・ω・｀)m ｺﾞﾒﾝ…
                     </span>
                 </div>
             </article>
         {{/next_post}}
 
         {{#prev_post}}
-            <article class="c-post-view-prev-next__item {{post_class}}">
+            <article class="c-post-view-prev-next__item {{post_class}} h-entry">
                 <a class="c-post-view-prev-next__image" href="{{url}}" title="{{title}}">
-                    <img class="c-post-view-prev-next__image__img" src="{{img_url feature_image}}" alt="{{title}}"/>
+                    {{#if feature_image}}
+                        <img class="c-post-view-prev-next__image__img" src="{{feature_image}}" alt="{{title}}" width="" height="" />
+                    {{/if}}
                     <span class="c-post-view-prev-next__image__label c-post-view-prev-next__image__label--previous">
-                        Previous Post
+                        前の投稿
                     </span>
                 </a>
 
-                <h3 class="c-post-view-prev-next__title">
-                    <a href="{{url}}" title="{{title}}">{{title}}</a>
-                </h3>
+                <h2 class="c-post-view-prev-next__title p-name">
+                    <a href="{{url}}">{{title}}</a>
+                </h2>
             </article>
         {{else}}
-            <article class="c-post-view-prev-next__item">
+            <article class="c-post-view-prev-next__item h-entry">
                 <div class="c-post-view-prev-next__image c-post-view-prev-next__image--placeholder">
                     <span class="c-post-view-prev-next__image__label c-post-view-prev-next__image__label--previous">
-                        No Older Posts
+                        これ以前の投稿はありません<br>
+                        ＼(^o^)／ｵﾜﾀ
                     </span>
                 </div>
             </article>

@@ -1,22 +1,24 @@
 {{!< default}}
 {{#post}}
-    <div class="c-post-view {{post_class}}">
-        <div class="c-page-title">
-            <h1 class="c-page-title__heading">
+    <article class="c-post-view {{post_class}} h-entry">
+        <header class="c-page-title">
+            <h1 class="c-page-title__heading p-name">
                 {{title}}
             </h1>
 
             {{> "post-meta"}}
-        </div>
+        </header>
 
-        <div class="c-post-view__content">
+        <section class="c-post-view__content e-content">
             {{content}}
-        </div>
+        </section>
 
-        <div class="c-post-view__footer">
-            {{> "post-share"}}
-            {{> "prev-next"}}
-            <!--{{> "comments"}}-->
-        </div>
-    </div>
+        <footer class="c-post-view__footer">
+            {{#is "post"}}
+                {{> "post-share"}}
+                {{> "prev-next"}}
+                <!--{{> "comments"}}-->
+            {{/is}}
+        </footer>
+    </article>
 {{/post}}
