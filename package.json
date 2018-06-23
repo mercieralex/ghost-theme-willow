@@ -1,21 +1,27 @@
 {
-  "name": "Willow",
-  "version": "4.1.0",
+  "name": "yanagi",
+  "version": "1.0.0",
+  "license": "MIT",
   "main": "Gruntfile.js",
   "author": {
-    "name": "Raivis Vitols",
-    "url": "https://raivis.com"
+    "name": "Alexandre Mercier",
+    "email": "alex@alexandremercier.jp",
+    "url": "https://www.alexandremercier.jp/"
   },
   "engines": {
     "ghost": ">=1.0.0"
   },
   "config": {
-    "posts_per_page": 9
+    "posts_per_page": 5
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mercieralex/ghost-theme-willow.git"
   },
   "devDependencies": {
-    "grunt": "~1.0.1",
-    "grunt-sass": "~1.1.0",
+    "grunt": "^1.0.3",
+    "grunt-contrib-uglify": "~1.0.1",
     "grunt-contrib-watch": "~1.0.0",
-    "grunt-contrib-uglify": "~1.0.1"
+    "grunt-sass": "~1.1.0"
   }
 }
