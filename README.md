@@ -1,4 +1,4 @@
-# Yanagi Ghost Theme 1.0.0
+# Yanagi Ghost Theme 1.0.1
 
 This is my fork of [Willow Ghost Theme 4.1](https://github.com/raivis-vitols/ghost-theme-willow) by Raivis Vitols.
 
