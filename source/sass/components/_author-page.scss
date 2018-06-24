@@ -4,10 +4,17 @@
 |-------------------------------------------------------------------------------
 */
 .c-author-page {
-  text-align: center;
   margin-bottom: 40px;
-  padding: 10px 0 40px;
-  border-bottom: 1px solid $c-gray;
+  padding: 40px;
+  border-bottom: 1px solid $c-chestnutBrown;
+  background: $c-white;
+  @include border-radius(4px);
+}
+
+@media (max-width: 549px) {
+    .c-author-page {
+      padding: 0 20px 20px;
+    }
 }
 
 // Image
@@ -25,16 +32,12 @@
 
 // Bio
 .c-author-page__bio {
-  max-width: 580px;
-  font-size: 0.9em;
-  color: $c-grayDark;
-  font-weight: normal;
   margin: 20px auto 0;
+  @extend .markdown;
 }
 
 // Meta
 .c-author-page__meta {
   margin-top: 20px;
-  font-size: 0.9em;
-  color: $c-grayDark;
+  @include ms-respond(font-size,-1);
 }
