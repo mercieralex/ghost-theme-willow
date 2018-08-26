@@ -1,6 +1,6 @@
 {
   "name": "yanagi",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "license": "MIT",
   "main": "Gruntfile.js",
   "author": {
@@ -9,7 +9,7 @@
     "url": "https://www.alexandremercier.jp/"
   },
   "engines": {
-    "ghost": ">=1.0.0"
+    "ghost": ">=2.0.0"
   },
   "config": {
     "posts_per_page": 5
