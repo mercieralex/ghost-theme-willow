@@ -71,6 +71,24 @@
     }
   }
 
+  .kg-width-wide {
+    margin-left: 0px;
+    margin-right: 0px;
+
+    @media (max-width: 549px) {
+    }
+  }
+
+  .kg-width-full .kg-image {
+    margin-left: -40px;
+    margin-right: -40px;
+
+    @media (max-width: 549px) {
+      margin-left: -20px;
+      margin-right: -20px;
+    }
+  }
+
   blockquote {
     font-family: "YuMincho +36p Kana","游明朝体+36ポかな";
     //padding-left: 30px;
